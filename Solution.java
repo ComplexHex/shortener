@@ -5,59 +5,6 @@ import com.javarush.task.task33.task3310.strategy.StorageStrategy;
 
 import java.util.*;
 
-//public class Solution {
-//    public static void main(String[] args) {
-//        testStrategy(new HashMapStorageStrategy(), 10000L);
-//    }
-//
-//    public static void testStrategy(StorageStrategy strategy, long elementsNumber) {
-//        Helper.printMessage(strategy.getClass().getSimpleName());
-//
-//        Set<String> newStringSet = new HashSet<>();
-//
-//        for (int i = 0; i < elementsNumber; ++i) {
-//            newStringSet.add(Helper.generateRandomString());
-//        }
-//
-//        Shortener shortener = new Shortener(strategy);
-//
-//
-//        Date date1 = new Date();
-//        Set<Long> setKeys = getIds(shortener, newStringSet);
-//        Date date2 = new Date();
-//        long time1 = date2.getTime() - date1.getTime();
-//        Helper.printMessage("" + time1);
-//
-//        Set<String> setString = getStrings(shortener, setKeys);
-//        Date date3 = new Date();
-//
-//        Date date4 = new Date();
-//        long time2 = date4.getTime() - date3.getTime();
-//        Helper.printMessage("" + time2);
-//
-//        if (newStringSet.equals(setString)) {
-//            Helper.printMessage("Тест пройден.");
-//        } else Helper.printMessage("Тест не пройден.");
-//    }
-//
-//
-//    public static Set<Long> getIds(Shortener shortener, Set<String> strings) {
-//        Set<Long> id = new HashSet<>();
-//        for (String string : strings) {
-//            id.add(shortener.getId(string));
-//        }
-//        return id;
-//    }
-//
-//    public static Set<String> getStrings(Shortener shortener, Set<Long> keys) {
-//        Set<String> strings = new HashSet<>();
-//        for (Long id : keys) {
-//            strings.add(shortener.getString(id));
-//        }
-//        return strings;
-//    }
-//
-
 public class Solution {
     public static void main(String[] args) {
         long elementsNumber = 10000;
