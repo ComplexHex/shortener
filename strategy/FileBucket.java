@@ -20,25 +20,28 @@ public class FileBucket {
             Files.deleteIfExists(path);
             Files.createFile(path);
         } catch (IOException e) {
+
         }
+     
     }
 
     public long getFileSize() throws IOException {
         return Files.size(path);
     }
 
-    public void putEntry(Entry entry) {
+    public void putEntry(Entry entry){
         try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(path))) {
             oos.writeObject(entry);
         } catch (Exception e) {
+
         }
     }
-
     public Entry getEntry() throws IOException {
         if (getFileSize() > 0) {
             try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(path))) {
                 return (Entry) ois.readObject();
             } catch (Exception e) {
+
             }
         }
         return null;
@@ -48,6 +51,7 @@ public class FileBucket {
         try {
             Files.delete(path);
         } catch (IOException e) {
+
         }
     }
 }

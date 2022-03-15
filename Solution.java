@@ -4,17 +4,18 @@ import com.javarush.task.task33.task3310.strategy.HashMapStorageStrategy;
 import com.javarush.task.task33.task3310.strategy.OurHashMapStorageStrategy;
 import com.javarush.task.task33.task3310.strategy.StorageStrategy;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         long elementsNumber = 10000;
 
         testStrategy(new HashMapStorageStrategy(), elementsNumber);
         testStrategy(new OurHashMapStorageStrategy(), elementsNumber);
     }
 
-    public static void testStrategy(StorageStrategy strategy, long elementsNumber) {
+    public static void testStrategy(StorageStrategy strategy, long elementsNumber) throws IOException {
         Helper.printMessage(strategy.getClass().getSimpleName() + ":");
 
         Set<String> origStrings = new HashSet<>();
@@ -53,7 +54,7 @@ public class Solution {
         return keys;
     }
 
-    public static Set<String> getStrings(Shortener shortener, Set<Long> keys) {
+    public static Set<String> getStrings(Shortener shortener, Set<Long> keys) throws IOException {
         Set<String> strings = new HashSet<>();
         for (Long k : keys) {
             strings.add(shortener.getString(k));
