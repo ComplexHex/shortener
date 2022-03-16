@@ -9,8 +9,6 @@ import java.io.IOException;
 
 public class FunctionalTest extends Assert {
 
-
-
     @Test
     public  void testStorage(Shortener shortener) throws IOException {
         String s1 = "Asdfqwert";
